@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { collection, doc, setDoc, getDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 
-const usersRef = collection(db, "trips");
-
 // Get a single trip
 export async function GET(request, { params }) {
   const docRef = doc(db, "trips", params.tripId);
