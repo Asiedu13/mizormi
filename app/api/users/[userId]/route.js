@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { v4 as uuidv4 } from "uuid";
 import {
   collection,
   doc,
@@ -41,9 +40,9 @@ export async function PUT(request, {params}) {
           trips: res.trips,
         } );
         
-    return NextResponse.json({ data: `${user} updated successfully`, status: true});
+    return NextResponse.json({ data: `User ${user} updated successfully`, status: true});
   } else {
-    return NextResponse.json({error: `${params.userId} does not exist`});
+    return NextResponse.json({error: `User ${params.userId} does not exist`});
   }
     
 }
