@@ -1,0 +1,31 @@
+import { NextResponse } from "next/server";
+import { v4 as uuidv4 } from "uuid";
+import { collection, doc, setDoc, getDocs, query } from "firebase/firestore";
+import { db } from "../firebase";
+
+const usersRef = collection( db, 'users' );
+
+export async function GET( request ) {
+    let data = [];
+    const querySnapshot = await getDocs( collection( db, 'users' ) );
+    querySnapshot.forEach((doc) => {
+        data.push( doc.data() );
+    });
+
+  return NextResponse.json({ users: data });
+}
+
+export async function POST() {
+const userId = uuidv4();
+   const res = await setDoc( doc( usersRef, userId), {
+        id: userId,
+        fullname: "Prince Kofi Asiedu",
+        profile_photo_url: null,
+        id_card_photo_url: null,
+        phone_number: "+233244276809",
+        email: "princekofasiedu@gmail.com",
+        trips: ["Kasoa"]
+   } );
+    
+    return NextResponse.json( { res } );
+}
