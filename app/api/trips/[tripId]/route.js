@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { collection, doc, setDoc, getDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 
+const tripsRef = collection(db, "trips");
+
 // Get a single trip
 export async function GET(request, { params }) {
   const docRef = doc(db, "trips", params.tripId);
@@ -22,7 +24,7 @@ export async function PUT(request, { params }) {
 
   if (docSnap.exists()) {
     const res = await request.json();
-    const updatedUser = await setDoc(doc(usersRef, trip), {
+    const updatedUser = await setDoc(doc(tripsRef, trip), {
       id: trip,
       bus_id: res.bus_id, 
       user_id: res.user_id, 

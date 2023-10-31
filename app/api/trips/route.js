@@ -10,11 +10,11 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase";
 
-const usersRef = collection(db, "trips");
+const tripsRef = collection(db, "trips");
 
 export async function GET(request) {
   let data = [];
-  const q = query(usersRef, limit(10));
+  const q = query(tripsRef, limit(10));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
     data.push(doc.data());
@@ -25,7 +25,7 @@ export async function GET(request) {
 
 export async function POST(request) {
   const tripId = uuidv4();
-  const res = await setDoc(doc(usersRef, tripId), {
+  const res = await setDoc(doc(tripsRef, tripId), {
     id: tripId,
     bus_id: uuidv4(), // TODO:REmove UUID
     user_id: uuidv4(), // TODO: Remove UUID
