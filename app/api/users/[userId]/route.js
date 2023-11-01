@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { collection, doc, setDoc, getDoc, deleteDoc } from "firebase/firestore";
+import { getAuth, updateProfile } from "firebase/auth";
 import { db } from "../../firebase";
 
 const usersRef = collection(db, "users");
