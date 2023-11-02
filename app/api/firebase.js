@@ -48,7 +48,7 @@ export const signInUser = async (email, password) => {
       password
     );
 
-    return userCredential;
+    return userCredential.user;
   } catch (error) {
     console.log(error);
   }
