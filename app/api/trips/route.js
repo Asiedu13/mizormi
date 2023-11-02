@@ -9,33 +9,46 @@ import {
   limit,
 } from "firebase/firestore";
 import { db } from "../firebase";
+import { AUTH_ERROR_MESSAGE, isAdmin } from "../utils";
+import { headers } from "next/headers";
 
 const tripsRef = collection(db, "trips");
 
-export async function GET(request) {
-  let data = [];
-  const q = query(tripsRef, limit(10));
-  const querySnapshot = await getDocs(q);
-  querySnapshot.forEach((doc) => {
-    data.push(doc.data());
-  });
 
-  return NextResponse.json({ data });
+export async function GET() {
+  const userAPIKey = headers().get("authorization");
+  if (await isAdmin(userAPIKey)) {
+    let data = [];
+    const q = query(tripsRef, limit(10));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      data.push(doc.data());
+    });
+    return NextResponse.json({ data, status: true });
+  } else {
+    return NextResponse.json({ data: AUTH_ERROR_MESSAGE, status: false });
+  }
 }
 
 export async function POST(request) {
-  const tripId = uuidv4();
-  const res = await setDoc(doc(tripsRef, tripId), {
-    id: tripId,
-    bus_id: uuidv4(), // TODO:REmove UUID
-    user_id: uuidv4(), // TODO: Remove UUID
-    departure_time: Date("12/02/2024"), // TODO: Look into JS date object
-    destination: "Accra",
-    stops: [],
-    trip_status: "OnGoing", // TODO: Find out the enums version for JS
-    ticket_price: 10.0,
-    departure_point: "Kasoa", // TODO: USe station IDs instead
-  });
+  const userAPIKey = headers().get("authorization");
+  if (await isAdmin(userAPIKey)) {
+    const res = await request.json();
+    const tripId = uuidv4();
+    const newTrip = await setDoc(doc(tripsRef, tripId), {
+      id: tripId,
+      bus_id: res.bus_id,
+      user_id: userAPIKey,
+      departure_time: res.departure_time,
+      destination: res.destination,
+      stops: res.stops,
+      trip_status: res.trip_status,
+      ticket_price: res.ticket_price,
+      departure_point: res.departure_point,
+    });
 
-  return NextResponse.json({ res, status: true });
+    return NextResponse.json({ data: tripId, status: true });
+  } else {
+    return NextResponse.json({ data: AUTH_ERROR_MESSAGE, status: false });
+  }
 }
