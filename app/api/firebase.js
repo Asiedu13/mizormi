@@ -1,7 +1,11 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword,  } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 import { getFirestore } from "firebase/firestore";
 
@@ -12,18 +16,18 @@ import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCi8fSGn3yPZDoh0tAWOrtchu1sH1XLo8E",
-  authDomain: "mizormi.firebaseapp.com",
-  projectId: "mizormi",
-  storageBucket: "mizormi.appspot.com",
-  messagingSenderId: "605477104733",
-  appId: "1:605477104733:web:ab9b77535ba3282d7071b4",
-  measurementId: "G-1FH5X309VL",
+  apiKey: process.env.NEXT_PUBLIC_apiKey,
+  authDomain: process.env.NEXT_PUBLIC_authDomain,
+  projectId: process.env.NEXT_PUBLIC_projectId,
+  storageBucket: process.env.NEXT_PUBLIC_storageBucket,
+  messagingSenderId: process.env.NEXT_PUBLIC_messagingSenderId,
+  appId: process.env.NEXT_PUBLIC_appId,
+  measurementId: process.env.NEXT_PUBLIC_measurementId,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth( app );
+export const auth = getAuth(app);
 
 export const signUpUser = async (email, password) => {
   try {
@@ -39,7 +43,6 @@ export const signUpUser = async (email, password) => {
   }
 };
 
-
 export const signInUser = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(
@@ -54,8 +57,5 @@ export const signInUser = async (email, password) => {
   }
 };
 
-
 // const analytics = getAnalytics(app);
 export const db = getFirestore(app);
-
-
