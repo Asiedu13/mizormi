@@ -22,7 +22,7 @@ export default function Home() {
           </p>
           <section className="mt-[10px] flex justify-evenly items-center">
             <a
-              href=""
+              href="https://github.com/Asiedu13/mizormi"
               className="flex text-sm justify-between items-center w-[120px] relative"
             >
               <p>Goto project</p>{" "}
