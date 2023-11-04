@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "cadd0d19-f754-4acd-a527-50eb05695455",
-		"name": "Mizormi",
+		"_postman_id": "62b7e548-baf6-4668-8168-11c36c1fb3b2",
+		"name": "Mizormi Live",
 		"description": "Digital transportation",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "11804312-cadd0d19-f754-4acd-a527-50eb05695455"
+		"_uid": "11804312-62b7e548-baf6-4668-8168-11c36c1fb3b2"
 	},
 	"item": [
 		{
@@ -12,7 +12,7 @@
 			"item": [
 				{
 					"name": "Get all Users",
-					"id": "c3aae265-8dbb-4c98-90a9-7cfffbbd7607",
+					"id": "9ca3128f-a283-46f3-8cb2-148324a26569",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -22,7 +22,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -49,12 +49,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/users",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/users",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users"
@@ -65,7 +66,7 @@
 				},
 				{
 					"name": "Add User",
-					"id": "618c4d99-7955-4aeb-be69-d53e57da2de9",
+					"id": "8075246f-c197-4a3e-8ee8-d32a85e01278",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -75,7 +76,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "Jf1x1YxL9bQPOIZXGp5GjqF7FhO2",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -102,12 +103,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/users",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/users",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users"
@@ -118,11 +120,31 @@
 				},
 				{
 					"name": "Update User",
-					"id": "a73d52a7-fd74-47ce-beb5-579fcad0a64c",
+					"id": "038cf86c-5be5-4e6e-9705-101921610e32",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "authorization",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -135,16 +157,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/users/7a2beb09-7331-4ed2-8899-7e14ca48033a",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/users/userId",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"users",
-								"7a2beb09-7331-4ed2-8899-7e14ca48033a"
+								"userId"
 							]
 						}
 					},
@@ -152,7 +174,7 @@
 				},
 				{
 					"name": "Delete User",
-					"id": "c49bf89e-1283-4e22-80cd-593617e61c2f",
+					"id": "5558c723-735e-4cbf-a37a-cb885527c2c9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -162,7 +184,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -189,16 +211,17 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/users/oIiYqeRI0PawMuPBYEY7FRNdXFb2",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/users/userId",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
-								"oIiYqeRI0PawMuPBYEY7FRNdXFb2"
+								"userId"
 							]
 						}
 					},
@@ -206,7 +229,7 @@
 				},
 				{
 					"name": "Get Single User",
-					"id": "463a09bd-d726-4b51-9d52-59deb7ef687f",
+					"id": "ae40d7b7-e948-43db-ace3-964a6c0c7bdf",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -216,7 +239,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -234,12 +257,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/users/userId",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/users/userId",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"users",
@@ -250,14 +274,14 @@
 					"response": []
 				}
 			],
-			"id": "d60b6f0d-afd5-405a-86fd-1a87e41a8b45"
+			"id": "a0212ad6-bcd8-43ba-8cc0-ad770aa27b70"
 		},
 		{
 			"name": "Trips",
 			"item": [
 				{
 					"name": "Get all trips",
-					"id": "b7a72915-c8c0-4200-bc55-200497b067e5",
+					"id": "a985e2a7-9d77-4901-9a5d-1abde14221b6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -267,7 +291,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -285,12 +309,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/trips",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/trips",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"trips"
@@ -301,7 +326,7 @@
 				},
 				{
 					"name": "Add Trip",
-					"id": "2573c153-6ad2-475f-87d6-47949f91e583",
+					"id": "266ef911-c444-4ea9-aba4-0c3de9f7e98e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -311,7 +336,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -338,12 +363,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/trips",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/trips",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"trips"
@@ -354,7 +380,7 @@
 				},
 				{
 					"name": "Delete Trip",
-					"id": "a91790ac-bc76-4e82-91ba-a5140ab6d4e2",
+					"id": "727a5705-adad-4e7b-a88c-4fba15e9db9f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -364,7 +390,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -382,12 +408,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/trips/tripId",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/trips/tripId",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"trips",
@@ -399,7 +426,7 @@
 				},
 				{
 					"name": "Update Trip",
-					"id": "bffe7177-fe00-4278-9673-ffce3b878a45",
+					"id": "67f3684a-2906-44b2-a90d-2fe5cc611cba",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -409,7 +436,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -436,12 +463,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/trips/tripId",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/trips/tripId",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"trips",
@@ -453,7 +481,7 @@
 				},
 				{
 					"name": "Get Single Trip",
-					"id": "8654f154-63d9-4186-8ac1-74187ec7e1c8",
+					"id": "eee454d9-eb5c-4455-a78a-87303faaafd9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -481,12 +509,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/trips/tripId",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/trips/tripId",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"trips",
@@ -497,7 +526,7 @@
 					"response": []
 				}
 			],
-			"id": "89fdb6c0-9927-4d6f-86c5-efcd9b7e93d0",
+			"id": "e6fecc78-69b2-432c-8656-c3d11c7648fa",
 			"description": "Admin access to all trips\n\nCRUD operations and Search"
 		},
 		{
@@ -505,7 +534,7 @@
 			"item": [
 				{
 					"name": "Get all Buses",
-					"id": "de6a1dfd-3e00-4374-88e3-633cff161054",
+					"id": "2fc64f06-4df7-4685-aa13-44206d5c6604",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -515,7 +544,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -533,12 +562,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/buses",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/buses",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"buses"
@@ -549,7 +579,7 @@
 				},
 				{
 					"name": "Add Bus",
-					"id": "eb90e7c8-47a1-4a44-bdbc-f4a325c56d5a",
+					"id": "64497844-367f-4833-a7c5-4012b1924020",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -559,7 +589,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -586,12 +616,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/buses",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/buses",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"buses"
@@ -602,7 +633,7 @@
 				},
 				{
 					"name": "Delete Bus",
-					"id": "a8e14f23-6922-428b-b62b-3e459e5985b3",
+					"id": "2b70b8d8-e724-4a3c-94e8-f9e5345a27df",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -612,7 +643,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -630,12 +661,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/buses/busId",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/buses/busId",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"buses",
@@ -647,7 +679,7 @@
 				},
 				{
 					"name": "Update Bus",
-					"id": "78e372f7-3c45-49b8-af09-2c8fe81f6ce2",
+					"id": "ec93e723-4ec3-4b6d-a78c-1223113201a4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -657,7 +689,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -684,12 +716,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/buses/busId",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/buses/busId",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"buses",
@@ -701,7 +734,7 @@
 				},
 				{
 					"name": "Get single bus",
-					"id": "c3ee7340-3407-43bc-bcb2-f5145797d5f2",
+					"id": "93c78085-6b8e-4cfb-9376-8890659ab488",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -711,7 +744,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -729,12 +762,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/buses/busId",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/buses/busId",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"buses",
@@ -745,14 +779,14 @@
 					"response": []
 				}
 			],
-			"id": "2c0c98f9-b4de-4d7f-8af5-5f341423ff09"
+			"id": "22ac85f7-d5c5-41e3-a4af-6ebde967bf10"
 		},
 		{
 			"name": "Tickets",
 			"item": [
 				{
 					"name": "Get all Tickets",
-					"id": "3e527c23-f4b3-4824-bc2b-92aef3a4284c",
+					"id": "d50db736-2e49-4fd7-b662-7a206c1e18de",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -762,7 +796,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -780,12 +814,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/tickets",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/tickets",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"tickets"
@@ -796,7 +831,7 @@
 				},
 				{
 					"name": "Add Ticket",
-					"id": "31e93a45-9f5a-442d-88aa-dd2b1d3ce323",
+					"id": "f9576d38-8995-4b2b-873e-1e029a751c57",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -806,7 +841,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -833,12 +868,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/tickets",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/tickets",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"tickets"
@@ -849,7 +885,7 @@
 				},
 				{
 					"name": "Delete Ticket",
-					"id": "3f067d1f-936a-4d4f-8dd9-e26183633122",
+					"id": "9a9fd3ec-77d1-4813-9b35-bc5998c24a45",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -859,7 +895,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -877,12 +913,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/tickets/ticketId",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/tickets/ticketId",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"tickets",
@@ -894,7 +931,7 @@
 				},
 				{
 					"name": "Update Ticket",
-					"id": "e3afd58c-8335-4e4d-9f7b-236ea816829e",
+					"id": "17d513c6-f265-4020-960f-b7e35f1eb65d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -904,7 +941,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -931,12 +968,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/tickets/ticketId",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/tickets/ticketId",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"tickets",
@@ -948,7 +986,7 @@
 				},
 				{
 					"name": "Get Single Ticket",
-					"id": "56d28fd9-143b-4011-8f8e-17419841533c",
+					"id": "1637f840-87d9-4dd1-ab61-16dd3a11b44f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -958,7 +996,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -976,12 +1014,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/tickets/ticketId",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/tickets/ticketId",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"tickets",
@@ -992,14 +1031,14 @@
 					"response": []
 				}
 			],
-			"id": "05ea172c-8328-4826-87bc-fe8f0d73ad77"
+			"id": "2c884636-ce31-4f0f-b7bc-b5f56309824e"
 		},
 		{
 			"name": "Driver",
 			"item": [
 				{
 					"name": "Get all Drivers",
-					"id": "f88afa80-6399-4a84-8f9e-f87092bafe81",
+					"id": "e6a3b7b0-ff92-4fff-b981-012d6fb2e446",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1009,7 +1048,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -1027,12 +1066,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/drivers",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/drivers",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"drivers"
@@ -1043,7 +1083,7 @@
 				},
 				{
 					"name": "Add Driver",
-					"id": "e2f52654-572c-46ae-aa08-6cb48e618b5f",
+					"id": "68d1d862-6ed8-4d17-9d2d-52ecc42595e4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1053,7 +1093,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -1080,12 +1120,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/drivers",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/drivers",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"drivers"
@@ -1096,7 +1137,7 @@
 				},
 				{
 					"name": "Delete Driver",
-					"id": "36b2eb38-b835-49ce-b82d-62f86b2a851d",
+					"id": "0d01e091-64ae-47ff-a511-c871b2447733",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1106,7 +1147,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -1124,12 +1165,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/drivers/driverId",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/drivers/driverId",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"drivers",
@@ -1141,7 +1183,7 @@
 				},
 				{
 					"name": "Update Driver",
-					"id": "0a68405e-2495-4b45-bc2d-c1b747ea8373",
+					"id": "5197edd9-5714-445f-8c1a-50b24fd70f51",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1151,7 +1193,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -1178,12 +1220,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/drivers/driverId",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/drivers/driverId",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"drivers",
@@ -1195,7 +1238,7 @@
 				},
 				{
 					"name": "Get Single Driver",
-					"id": "8ebaf945-66c7-46ac-a371-a7e385d23bed",
+					"id": "a6aa1762-aeeb-404e-9757-b5b667c2d27d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1205,7 +1248,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "{{admin_apiKey}}",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -1223,12 +1266,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/drivers/driverId",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/drivers/driverId",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"drivers",
@@ -1239,14 +1283,14 @@
 					"response": []
 				}
 			],
-			"id": "656efd82-416e-4d63-bf1a-9875a6d8db92"
+			"id": "4f2db106-3395-4878-b01e-7dae7357a2aa"
 		},
 		{
 			"name": "Me",
 			"item": [
 				{
 					"name": "Get auth user profile",
-					"id": "79ab1079-b26c-4d10-be6b-6c0b4d0c63e2",
+					"id": "cfb53018-d15f-4827-9616-7eeae138ee16",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1256,7 +1300,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "Jf1x1YxL9bQPOIZXGp5GjqF7FhO2",
+									"value": "",
 									"type": "string"
 								},
 								{
@@ -1274,12 +1318,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/me",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/me",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"me"
@@ -1289,101 +1334,8 @@
 					"response": []
 				},
 				{
-					"name": "Get User Trips",
-					"id": "4bfeedd1-666b-4590-92e9-9a040bd3cb75",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"paayaw@gmail.com\",\n    \"password\": \"11111111\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/signin",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"signin"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get User Tickets",
-					"id": "ea31749b-e5c3-4d7a-89f8-214330cc04cd",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "apikey",
-							"apikey": [
-								{
-									"key": "in",
-									"value": "header",
-									"type": "string"
-								},
-								{
-									"key": "value",
-									"value": "0ZOInDYqc9b2ulfatUGRHct6J352",
-									"type": "string"
-								},
-								{
-									"key": "key",
-									"value": "authorization",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/me/tickets",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"me",
-								"tickets"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"id": "0a1abcd4-e993-4658-bb79-0167ef46a111"
-		},
-		{
-			"name": "Registration",
-			"item": [
-				{
-					"name": "Sign In",
-					"id": "5f9ce995-cc2e-4a8d-ac3e-4f121479b69b",
+					"name": "Get Trips",
+					"id": "3672b1ec-3f01-4a90-9fd4-5f0c3c96d0c7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1420,12 +1372,128 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/signin",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/signin",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
+							"path": [
+								"api",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Tickets",
+					"id": "db799789-bffc-4f4a-8dfc-956f8fce3567",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mizormi.vercel.app/api/me/tickets",
+							"protocol": "https",
+							"host": [
+								"mizormi",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"me",
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "9a40ffcd-e429-4634-a161-89f13a4f0372"
+		},
+		{
+			"name": "Registration",
+			"item": [
+				{
+					"name": "Sign In",
+					"id": "e56e8dd6-086d-49d8-bf57-e020f9e309a4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"paayaw@gmail.com\",\n    \"password\": \"11111111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mizormi.vercel.app/api/signin",
+							"protocol": "https",
+							"host": [
+								"mizormi",
+								"vercel",
+								"app"
+							],
 							"path": [
 								"api",
 								"signin"
@@ -1436,11 +1504,31 @@
 				},
 				{
 					"name": "Sign Up",
-					"id": "ffc2f06d-592a-4637-8345-53fe62b0a65d",
+					"id": "625948ea-77e6-4548-957d-ef1015cfaf21",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "authorization",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -1453,12 +1541,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/register",
-							"protocol": "http",
+							"raw": "https://mizormi.vercel.app/api/register",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"mizormi",
+								"vercel",
+								"app"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"register"
@@ -1468,14 +1557,14 @@
 					"response": []
 				}
 			],
-			"id": "0515f61a-3578-4c8b-a80c-595b4db89162"
+			"id": "eb52ec08-76db-4970-b6af-663b3adb3898"
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "ffb8bfe0-3f4f-41a9-a080-1628142240ad",
+				"id": "a5f4bb97-a408-4c2b-a665-32d4d192f3ba",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1485,7 +1574,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "ae6f730b-9e44-478a-8ff2-36f50efddf56",
+				"id": "654f1c2c-f68e-42e5-a055-c23c120bfd05",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1495,12 +1584,12 @@
 	],
 	"variable": [
 		{
-			"id": "0dda0c8d-6f7f-4d38-814e-27cec68a2599",
+			"id": "6a1931fd-4175-414d-9d6d-49dc8798f8bc",
 			"key": "admin_apiKey",
 			"value": "Jf1x1YxL9bQPOIZXGp5GjqF7FhO2"
 		},
 		{
-			"id": "36090b0b-0f15-4e40-8f38-e2880956061e",
+			"id": "51e8c6f3-2e38-45e7-aa72-59fe4dec838c",
 			"key": "normalUserApiKey",
 			"value": "0ZOInDYqc9b2ulfatUGRHct6J352"
 		}
