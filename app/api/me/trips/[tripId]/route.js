@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { collection, doc, setDoc, getDoc, deleteDoc } from "firebase/firestore";
-import { db } from "../../firebase";
+import { db } from "../../../firebase-config";
 
 const tripsRef = collection(db, "trips");
 
@@ -26,9 +26,9 @@ export async function PUT(request, { params }) {
     const res = await request.json();
     const updatedUser = await setDoc(doc(tripsRef, trip), {
       id: trip,
-      bus_id: res.bus_id, 
-      user_id: res.user_id, 
-      departure_time: res.departure_time, 
+      bus_id: res.bus_id,
+      user_id: res.user_id,
+      departure_time: res.departure_time,
       destination: res.destination,
       stops: res.stops,
       trip_status: res.trip_status,
