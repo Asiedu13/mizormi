@@ -9,14 +9,14 @@ import {
   query,
   limit,
 } from "firebase/firestore";
-import { db, signUpUser } from "../firebase";
+import { db, signUpUser } from "../firebase-config";
 
 import { AUTH_ERROR_MESSAGE, isAdmin } from "../utils";
 
 const usersRef = collection(db, "users");
 
 export async function GET(request) {
-  const userAPIKey = headers().get( "authorization" );
+  const userAPIKey = headers().get("authorization");
 
   if (await isAdmin(userAPIKey)) {
     let data = [];
@@ -31,14 +31,14 @@ export async function GET(request) {
   }
 }
 
-export async function POST( request ) {
-  const userAPIKey = headers().get( "authorization" );
-  if ( await isAdmin( userAPIKey ) ) {
+export async function POST(request) {
+  const userAPIKey = headers().get("authorization");
+  if (await isAdmin(userAPIKey)) {
     const { email, password } = await request.json();
 
-    const user = await signUpUser( email, password );
+    const user = await signUpUser(email, password);
 
-    const res = await setDoc( doc( usersRef, user.uid ), {
+    const res = await setDoc(doc(usersRef, user.uid), {
       id: user.uid,
       full_name: "",
       profile_photo_url: null,
@@ -47,14 +47,14 @@ export async function POST( request ) {
       email,
       password,
       trips: [],
-    } );
+    });
 
-    return NextResponse.json( {
+    return NextResponse.json({
       data: user.providerData,
       apiKey: user.uid,
       status: true,
-    } );
+    });
   } else {
-    return NextResponse.json( { data: AUTH_ERROR_MESSAGE, status: false } );
+    return NextResponse.json({ data: AUTH_ERROR_MESSAGE, status: false });
   }
 }

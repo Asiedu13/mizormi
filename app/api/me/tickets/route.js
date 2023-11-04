@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { collection, query, where, getDocs } from "firebase/firestore";
-import { db } from "../../firebase";
+import { db } from "../../firebase-config";
 
 export async function GET() {
   const userAPIKey = headers().get("authorization");
@@ -14,9 +14,9 @@ export async function GET() {
 
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
-    userTickets.push({data: doc.data() });
+    userTickets.push({ data: doc.data() });
   });
- return NextResponse.json({ data: userTickets, status: true });
+  return NextResponse.json({ data: userTickets, status: true });
 }
 
 export async function POST(request) {

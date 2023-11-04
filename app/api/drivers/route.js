@@ -9,7 +9,7 @@ import {
   query,
   limit,
 } from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "../firebase-config";
 
 import { v4 as uuidv4 } from "uuid";
 

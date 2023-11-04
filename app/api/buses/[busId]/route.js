@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 
 import { collection, doc, setDoc, getDoc, deleteDoc } from "firebase/firestore";
-import { db } from "../../firebase";
+import { db } from "../../firebase-config";
 
 import { isAdmin, AUTH_ERROR_MESSAGE } from "../../utils";
 

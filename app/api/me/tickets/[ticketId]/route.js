@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { collection, doc, setDoc, getDoc, deleteDoc } from "firebase/firestore";
-import { db } from "../../../firebase";
+import { db } from "../../../firebase-config";
 
 const ticketsRef = collection(db, "tickets");
 
@@ -15,7 +15,6 @@ export async function GET(request, { params }) {
     return NextResponse.json({ error: `${params.ticketId} does not exist` });
   }
 }
-
 
 export async function PUT(request, { params }) {
   const ticket = params.ticketId;
@@ -42,7 +41,6 @@ export async function PUT(request, { params }) {
     });
   }
 }
-
 
 export async function DELETE(request, { params }) {
   const ticket = params.ticket;

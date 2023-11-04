@@ -9,7 +9,7 @@ import {
   limit,
   where,
 } from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "../firebase-config";
 import { headers } from "next/headers";
 import { AUTH_ERROR_MESSAGE, isAdmin } from "../utils";
 

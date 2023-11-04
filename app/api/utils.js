@@ -1,4 +1,4 @@
-import { db } from "./firebase";
+import { db } from "./firebase-config";
 import { query, where, collection, getDocs } from "firebase/firestore";
 
 export async function isAdmin(userAPIKey) {

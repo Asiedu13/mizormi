@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { collection, setDoc, getDoc, doc, deleteDoc } from "firebase/firestore";
 import { headers } from "next/headers";
-import { db } from "../firebase";
+import { db } from "../firebase-config";
 
 const usersRef = collection(db, "users");
 

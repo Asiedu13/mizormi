@@ -8,12 +8,11 @@ import {
   query,
   limit,
 } from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "../firebase-config";
 import { AUTH_ERROR_MESSAGE, isAdmin } from "../utils";
 import { headers } from "next/headers";
 
 const tripsRef = collection(db, "trips");
-
 
 export async function GET() {
   const userAPIKey = headers().get("authorization");

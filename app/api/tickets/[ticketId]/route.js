@@ -2,11 +2,11 @@ import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 
 import { collection, doc, setDoc, getDoc, deleteDoc } from "firebase/firestore";
-import { db } from "../../firebase";
+import { db } from "../../firebase-config";
 
 import { AUTH_ERROR_MESSAGE, isAdmin } from "../../utils";
 
-const ticketsRef = collection( db, "tickets" );
+const ticketsRef = collection(db, "tickets");
 
 // Get a single ticket
 export async function GET(request, { params }) {
@@ -27,7 +27,7 @@ export async function GET(request, { params }) {
 
 export async function PUT(request, { params }) {
   const userAPIKey = headers().get("authorization");
-  if (isAdmin(userAPIKey) ) {
+  if (isAdmin(userAPIKey)) {
     const ticket = params.ticketId;
     const docRef = doc(db, "tickets", ticket);
     const docSnap = await getDoc(docRef);

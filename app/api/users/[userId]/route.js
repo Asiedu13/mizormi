@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 
 import { collection, doc, setDoc, getDoc, deleteDoc } from "firebase/firestore";
-import { getAuth, updateProfile, deleteUser} from "firebase/auth";
-import { db, signInUser } from "../../firebase";
+import { getAuth, updateProfile, deleteUser } from "firebase/auth";
+import { db, signInUser } from "../../firebase-config";
 
 import { AUTH_ERROR_MESSAGE, isAdmin } from "../../utils";
 
@@ -29,7 +29,7 @@ export async function GET(request, { params }) {
 // Updating a single user
 export async function PUT(request, { params }) {
   const userAPIKey = headers().get("authorization");
-  if (await isAdmin(userAPIKey)){
+  if (await isAdmin(userAPIKey)) {
     const user = params.userId;
     const docRef = doc(db, "users", user);
     const docSnap = await getDoc(docRef);
@@ -64,18 +64,17 @@ export async function PUT(request, { params }) {
 // Delete a single user
 export async function DELETE(request, { params }) {
   const userAPIKey = headers().get("authorization");
-  
-  if ( await isAdmin( userAPIKey ) ) {
-    const req = await request.json(); 
-    
+
+  if (await isAdmin(userAPIKey)) {
+    const req = await request.json();
+
     // Delete extra data
     const user = params.userId;
     const res = await deleteDoc(doc(db, "users", user));
 
     // Delete user from auth
-    const signedInUser = await signInUser( req.email, req.password );
-    const deleteAUser = await deleteUser( signedInUser );
-
+    const signedInUser = await signInUser(req.email, req.password);
+    const deleteAUser = await deleteUser(signedInUser);
 
     return NextResponse.json({
       data: `User ${signedInUser.uid} deleted successfully`,

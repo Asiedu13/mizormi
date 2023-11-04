@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { collection, doc, setDoc, getDoc, deleteDoc } from "firebase/firestore";
-import { db } from "../../firebase";
 import { headers } from "next/headers";
+import { collection, doc, setDoc, getDoc, deleteDoc } from "firebase/firestore";
+import { db } from "../../firebase-config";
 import { AUTH_ERROR_MESSAGE, isAdmin } from "../../utils";
 
 const tripsRef = collection(db, "trips");
