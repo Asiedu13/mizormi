@@ -10,7 +10,6 @@ id = a6cf0818-2d20-479b-8c13-9d393bbe3be0
 [config.relations.collections]
 rootDirectory = postman/collections
 files[] = {"id":"11804312-62b7e548-baf6-4668-8168-11c36c1fb3b2","path":"Mizormi Live.json","metaData":{}}
-files[] = {"id":"11804312-cadd0d19-f754-4acd-a527-50eb05695455","path":"Mizormi.json","metaData":{}}
 
 [config.relations.collections.metaData]
 
